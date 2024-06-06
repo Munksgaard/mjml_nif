@@ -20,13 +20,9 @@ defmodule Mjml.Native do
     2.16
   )
 
-  use RustlerPrecompiled,
+  use Rustler,
     otp_app: :mjml,
-    crate: "mjml_nif",
-    base_url: "#{github_url}/releases/download/v#{version}",
-    version: version,
-    targets: targets,
-    nif_versions: nif_versions
+    crate: "mjml_nif"
 
   def to_html(_mjml, _render_options), do: error()
   defp error(), do: :erlang.nif_error(:nif_not_loaded)
