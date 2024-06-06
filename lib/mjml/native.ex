@@ -24,7 +24,6 @@ defmodule Mjml.Native do
     otp_app: :mjml,
     crate: "mjml_nif",
     base_url: "#{github_url}/releases/download/v#{version}",
-    force_build: System.get_env("MJML_BUILD") in ["1", "true"],
     version: version,
     targets: targets,
     nif_versions: nif_versions
